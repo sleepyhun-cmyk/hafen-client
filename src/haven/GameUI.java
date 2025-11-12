@@ -285,6 +285,7 @@ public class GameUI extends ConsoleHost implements Console.Directory, UI.Notice.
 		    return(new Coord(GameUI.this.sz.x, Math.min(brpanel.c.y - UI.scale(79), GameUI.this.sz.y - menupanel.sz.y)));
 		}
 	    }, new Coord(1, 0)));
+add(new MinimapWidget(new Coord(UI.scale(10), UI.scale(10)), ui));
 	ulpanel = add(new Hidepanel("gui-ul", null, new Coord(-1, -1)));
 	umpanel = add(new Hidepanel("gui-um", null, new Coord( 0, -1)));
 	urpanel = add(new Hidepanel("gui-ur", null, new Coord( 1, -1)));
