@@ -32,6 +32,9 @@ import java.lang.reflect.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 public class Widget {
     public UI ui;
@@ -1942,6 +1945,33 @@ public class Widget {
 	    return(rend);
 	}
     }
+
+ublic class MinimapWidget extends Widget {
+    private static final Coord SIZE = new Coord(200, 200);
+    private BufferedImage img;
+    private MapFile map;
+
+    public MinimapWidget(Coord c, UI ui, MapFile map) {
+        super(c, SIZE, ui);
+        this.map = map;
+        img = new BufferedImage(SIZE.x, SIZE.y, BufferedImage.TYPE_INT_RGB);
+    }
+
+    @Override
+    public void draw(GOut g) {
+        Graphics2D g2 = img.createGraphics();
+        g2.setColor(Color.BLACK);
+        g2.fillRect(0, 0, SIZE.x, SIZE.y);
+        
+        // Example: draw player position + local map tiles
+        Coord player = ui.sess.glob.map.player().rc.floor();
+        g2.setColor(Color.GREEN);
+        g2.fillOval(SIZE.x/2 - 2, SIZE.y/2 - 2, 4, 4);
+
+        g.image(img, Coord.z);
+        super.draw(g);
+    }
+}
 
     public Object tooltip(Coord c, Widget prev) {
 	return(tooltip);
