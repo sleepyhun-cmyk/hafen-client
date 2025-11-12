@@ -32,9 +32,6 @@ import java.lang.reflect.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 
 public class Widget {
     public UI ui;
@@ -1946,6 +1943,7 @@ public class Widget {
 	}
     }
 
+<<<<<<< HEAD
 public class MinimapWidget extends Widget {
     private static final Coord SIZE = new Coord(200, 200);
     private BufferedImage img;
@@ -1973,6 +1971,8 @@ public class MinimapWidget extends Widget {
     }
 }
 
+=======
+>>>>>>> parent of e73c8504 (Update Widget.java)
     public Object tooltip(Coord c, Widget prev) {
 	return(tooltip);
     }
