@@ -1946,7 +1946,7 @@ public class Widget {
 	}
     }
 
-ublic class MinimapWidget extends Widget {
+public class MinimapWidget extends Widget {
     private static final Coord SIZE = new Coord(200, 200);
     private BufferedImage img;
     private MapFile map;
